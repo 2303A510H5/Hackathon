@@ -1,0 +1,88 @@
+import java.util.Scanner;
+public class AICareerGuidance {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("🎯 Welcome to AI Career Guidance System 🎯");
+        System.out.print("🔹 Enter Name: ");
+        String name = scanner.nextLine();
+        System.out.print("🔹 Enter Aptitude (Logical Thinking, Creativity, Communication, Analytical, Problem Solving): ");
+        String aptitude = scanner.nextLine();
+        System.out.print("🔹 Enter Interests (Programming, Design, Public Speaking, Finance, Engineering, etc.): ");
+        String interests = scanner.nextLine();
+        System.out.print("🔹 Enter Skills (e.g., Java, Photoshop, Public Speaking, Finance, Engineering): ");
+        String skills = scanner.nextLine();
+        System.out.print("🔹 Enter Experience (Years or 'None'): ");
+        String experience = scanner.nextLine();
+        String careerSuggestion = recommendCareer(aptitude, skills, interests);
+        System.out.println("\n🔍 Recommended Careers: " + careerSuggestion);
+        String skillGap = analyzeGap(aptitude, skills);
+        System.out.println("📌 Skill Gap Analysis: " + skillGap);
+        String futureGrowth = futureOpportunities(aptitude);
+        System.out.println("🚀 Future Career Opportunities: " + futureGrowth);
+        scanner.close();
+        System.out.println("\n🚀 Thank you for using AI Career Guidance System! 🚀");
+    }
+    public static String recommendCareer(String aptitude, String skills, String interests) {
+        if (aptitude.equalsIgnoreCase("Logical Thinking") && skills.toLowerCase().contains("programming")) {
+            return "Software Developer, Data Scientist, AI Engineer";
+        } else if (aptitude.equalsIgnoreCase("Creativity") && interests.toLowerCase().contains("design")) {
+            return "Graphic Designer, UI/UX Designer, Animator";
+        } else if (aptitude.equalsIgnoreCase("Communication") && skills.toLowerCase().contains("public speaking")) {
+            return "Marketing Manager, HR Professional, Public Relations";
+        } else if (aptitude.equalsIgnoreCase("Analytical") && skills.toLowerCase().contains("finance")) {
+            return "Financial Analyst, Investment Banker, Data Analyst";
+        } else if (aptitude.equalsIgnoreCase("Problem Solving") && skills.toLowerCase().contains("engineering")) {
+            return "Mechanical Engineer, Civil Engineer, Electrical Engineer";
+        } else {
+            return "Further assessment needed. Consider upskilling!";
+        }
+    }
+    public static String analyzeGap(String aptitude, String skills) {
+        if (aptitude.equalsIgnoreCase("Logical Thinking") && !skills.toLowerCase().contains("programming")) {
+            return "🚀 Recommended: Learn Java, Python, or C++.";
+        } else if (aptitude.equalsIgnoreCase("Creativity") && !skills.toLowerCase().contains("design")) {
+            return "🎨 Recommended: Take courses in Graphic Design, UI/UX.";
+        } else if (aptitude.equalsIgnoreCase("Communication") && !skills.toLowerCase().contains("public speaking")) {
+            return "🗣 Recommended: Improve public speaking & communication skills.";
+        } else if (aptitude.equalsIgnoreCase("Analytical") && !skills.toLowerCase().contains("finance")) {
+            return "📊 Recommended: Learn Financial Modeling, Investment Strategies.";
+        } else if (aptitude.equalsIgnoreCase("Problem Solving") && !skills.toLowerCase().contains("engineering")) {
+            return "🛠 Recommended: Take courses in Engineering Principles.";
+        } else {
+            return "✅ No major skill gaps detected.";
+        }
+    }
+    public static String futureOpportunities(String aptitude) {
+        if (aptitude.equalsIgnoreCase("Logical Thinking")) {
+            return "📈 Future Growth: AI, Cybersecurity, Cloud Computing.";
+        } else if (aptitude.equalsIgnoreCase("Creativity")) {
+            return "🎭 Future Growth: AR/VR Design, Digital Art, Content Creation.";
+        } else if (aptitude.equalsIgnoreCase("Communication")) {
+            return "📢 Future Growth: Influencer Marketing, Media Management.";
+        } else if (aptitude.equalsIgnoreCase("Analytical")) {
+            return "📊 Future Growth: Blockchain, FinTech, Business Intelligence.";
+        } else if (aptitude.equalsIgnoreCase("Problem Solving")) {
+            return "🏗 Future Growth: Green Energy, Smart Cities, Robotics.";
+        } else {
+            return "🔮 Keep an eye on emerging fields and trends!";
+        }
+    }
+}
+
+
+
+Output:
+? Welcome to AI Career Guidance System ?
+? Enter Name: Alice
+? Enter Aptitude (Logical Thinking, Creativity, Communication, Analytical, Problem Solving): Logical Thinking
+? Enter Interests (Programming, Design, Public Speaking, Finance, Engineering, etc.): Programming
+? Enter Skills (e.g., Java, Photoshop, Public Speaking, Finance, Engineering): 2
+? Enter Experience (Years or 'None'): 2
+
+? Recommended Careers: Further assessment needed. Consider upskilling!
+? Skill Gap Analysis: ? Recommended: Learn Java, Python, or C++.
+? Future Career Opportunities: ? Future Growth: AI, Cybersecurity, Cloud Computing.
+
+? Thank you for using AI Career Guidance System! ?
+
+=== Code Execution Successful ===
